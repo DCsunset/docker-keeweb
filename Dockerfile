@@ -8,7 +8,7 @@ RUN curl -Ss -L -O https://github.com/keeweb/keeweb/archive/gh-pages.tar.gz \
 # Install plugins
 RUN curl -Ss -L -O https://github.com/keeweb/keeweb-plugins/archive/master.tar.gz \
 	&& tar -xvf master.tar.gz -C / \
-	&& mv /keeweb-plugins-master/docs keeweb/plugins
+	&& mv /keeweb-plugins-master/docs /keeweb/plugins
 
 
 FROM nginx:alpine
