@@ -4,8 +4,9 @@
 FROM alpine:latest AS builder
 RUN apk add --no-cache curl tar
 RUN curl -Ss -L -O https://github.com/keeweb/keeweb/archive/gh-pages.tar.gz \
-	&& tar -xvf gh-pages.tar.gz -C / \
-	&& curl -Ss -L -O https://github.com/keeweb/keeweb-plugins/archive/master.tar.gz \
+	&& tar -xvf gh-pages.tar.gz -C /
+# Install plugins
+RUN curl -Ss -L -O https://github.com/keeweb/keeweb-plugins/archive/master.tar.gz \
 	&& tar -xvf master.tar.gz -C / \
 	&& mv /keeweb-plugins-master/docs keeweb/plugins
 
