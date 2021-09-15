@@ -14,7 +14,7 @@ RUN curl -Ss -L -O https://github.com/keeweb/keeweb-plugins/archive/master.tar.g
 FROM nginx:alpine
 LABEL MAINTAINER="DCsunset"
 
-COPY keeweb.conf /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=builder /keeweb-gh-pages /app/keeweb
 
 CMD ["nginx", "-g", "daemon off;"]
